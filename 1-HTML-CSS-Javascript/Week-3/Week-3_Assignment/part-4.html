@@ -34,6 +34,10 @@
 
 <div class="leftside"
      id="leftside">
+    <!-- TODO - Make a score
+            1. based on number of faces vs time it took
+                Example - 20 faces * 100 / time
+    -->
 
 </div>
 <div class="rightside"
@@ -42,10 +46,18 @@
 </div>
 
 <script type="text/javascript">
-
+    var numberOfFaces = 5;
     function generateFaces() {
+        var leftDiv = document.getElementById('leftside');
+        var rightDiv = document.getElementById('rightside');
 
-        var numberOfFaces = 5;
+        while (leftDiv.firstChild){
+            leftDiv.removeChild(leftDiv.firstChild);
+        }
+        while (rightDiv.firstChild){
+            rightDiv.removeChild(rightDiv.firstChild);
+        }
+
         // right and left divs
         var theLeftSide = document.getElementById("leftside");
 
@@ -57,7 +69,6 @@
             img.style.left = left + 'px';
             img.style.top = top + "px";
             theLeftSide.appendChild(img);
-            console.log("All Done Cloning");
         }
         // clone leftside to right side
         leftSideImages = theLeftSide.cloneNode(true);
@@ -74,22 +85,16 @@
 
         var theBody = document.getElementsByTagName("body")[0];
 
-        console.log(leftLastChild);
-
         theLeftSide.lastChild.onclick = function nextLevel(event) { // add faces when last child is clicked
 
-            console.log("hello");
-
             event.stopPropagation();
-
             numberOfFaces += 5;
 
             generateFaces();
         }
-        theBody.onclick = function gameOver() {
+        theBody.onclick = function gameOver() {// If wrong face is chosen
 
             alert("Game Over!");
-
 
             theBody.onclick = null;
 
