@@ -49,7 +49,7 @@
 <script type="text/javascript">
     var numberOfFaces = 5;
 
-    var score = (numberOfFaces - 5) * 1000;
+    var score =0;
 
     function generateFaces() {
         var leftDiv = document.getElementById('leftside');
@@ -94,22 +94,18 @@
         var theBody = document.getElementsByTagName("body")[0];
 
         theLeftSide.lastChild.onclick = function nextLevel(event) { // add faces when last child is clicked
-
             event.stopPropagation();
-            numberOfFaces += 5;
-// FIXME - fix numbers on score
-            var currentTurnScore;
-            var stopTime = Date.now();// Stop timer
-            var totalTime = (stopTime - startTime) / 100;
-            currentTurnScore =  5  / totalTime;
-            score = score + currentTurnScore;
-            score = score * 100;
-            console.log("I am current score.  "  + currentTurnScore + " And I am total score: " + score);
             //  keep score
+            var stopTime, turnTime;
+            stopTime = Date.now();
+            turnTime = Math.round((stopTime - startTime) / 1000);
+            turnScore = Math.round((numberOfFaces * 10)/turnTime);
+            score += turnScore;
             document.getElementById("score").innerHTML=score;
 
+            numberOfFaces += 5;
             generateFaces();
-        }
+        };
         theBody.onclick = function gameOver() {// If wrong face is chosen
 
             alert("Game Over!");
