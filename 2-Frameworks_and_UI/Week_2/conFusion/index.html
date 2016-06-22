@@ -23,7 +23,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-    
+
 
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header navbar-left">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -42,6 +42,15 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Ristorante Con Fusion</a>
             </div>
+            <form class="navbar-form navbar-right">
+                <div a class="form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="password" class="form-control" placeholder="password">
+                    <input type="checkbox" class="form-control">
+                    <label for="checkbox" id="label-checkbox">Remember me</label>
+                </div>
+                <input class="btn btn-primary" type="submit">
+            </form>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
@@ -56,7 +65,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                         Menu <span class="caret"></span></a>
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Appetizers</a></li>
                             <li><a href="#">Main Courses</a></li>
@@ -69,7 +78,11 @@
                         </ul>
                     </li>
 
-                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="contactus.html">
+                            <i class="fa fa-envelope-o"></i> Contact
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -93,9 +106,9 @@
         </div>
     </header>
     <div class="container">
-    <ol class="breadcrumb">
-        <li class="active">Home</li>
-    </ol>
+        <ol class="breadcrumb">
+            <li class="active">Home</li>
+        </ol>
     </div>
     <div class="container">
         <div class="row row-content">
