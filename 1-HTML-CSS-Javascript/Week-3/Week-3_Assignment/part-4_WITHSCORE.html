@@ -31,6 +31,7 @@
 <h1>Matching Game</h1>
 
 <p>Click on the extra smiling face on the left</p>
+<h1>Score: </h1>  <H1 id="score"></H1>
 
 <div class="leftside"
      id="leftside">
@@ -94,6 +95,14 @@
 
         theLeftSide.lastChild.onclick = function nextLevel(event) { // add faces when last child is clicked
             event.stopPropagation();
+            //  keep score
+            var stopTime, turnTime;
+            stopTime = Date.now();
+            turnTime = Math.round((stopTime - startTime) / 1000);
+            turnScore = Math.round((numberOfFaces * 10)/turnTime);
+            score += turnScore;
+            document.getElementById("score").innerHTML=score;
+
             numberOfFaces += 5;
             generateFaces();
         };
