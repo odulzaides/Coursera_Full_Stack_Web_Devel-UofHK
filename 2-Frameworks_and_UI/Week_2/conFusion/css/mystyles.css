@@ -1,3 +1,7 @@
+.navbar-form * {
+    margin-left:.3rem;
+}
+
 .row-header {
     margin: 0px auto;
     padding: 0px auto;
@@ -66,7 +70,17 @@ body {
     color: #DDD;
 }
 
-#label-checkbox{
-    margin-right:.4em;
-    padding-top:1rem;
+#reserve {
+    margin-top:1.3rem;
+}
+.calender {
+    position:relative;
+    left:15.55rem;
+    bottom:.5rem;
+}
+
+.clock {
+    position:relative;
+    left:15.55rem;
+    bottom:.89rem;
 }
